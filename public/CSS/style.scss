@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* BASE CSS */
+* {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+button,
+a {
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+}
+
+/* VARIABLES */
+$w: #fff;
+$wd: #e3e9f1;
+$r: #f56565;
+$g: #48bb78;
+$b: #4299e1;
+$y: #ecc94b;
+
+/* STYLE */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* HEADER */
+header {
+  color: $w;
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: $b;
+  padding: 1rem 3rem;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-size: 2rem;
+      font-weight: 100;
+    }
+    .list_nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      li {
+        white-space: nowrap;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 1.1rem;
+          font-weight: bold;
+          text-decoration: underline;
+          text-underline-offset: 0.2rem;
+        }
+        i {
+          font-size: 1.5rem;
+        }
+      }
+      //   li:hover:nth-child(2) {
+      //     color: $r;
+      //   }
+    }
+  }
+}
+
+/* LIENS DE CREATION DE COMPTE 1 CONEXION */
+.conexion {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  li {
+    a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      border-radius: 0.2rem;
+      border: solid $wd 1px;
+      padding: 0.7rem 1rem;
+      background-color: $wd;
+    }
+    &:first-child a {
+      color: $w;
+      background-color: $g;
+    }
+  }
+}
+.error {
+  margin: 0.7rem 0;
+  color: $r;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.create_account_login {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  color: $b;
+  text-decoration: underline;
+}
+
+/* LES FORM */
+.inputs {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  input {
+    border-radius: 0.2rem;
+    border: solid $wd 1px;
+    padding: 0.7rem 1rem;
+  }
+  .eye {
+    width: 1.5rem;
+    font-size: 1.2rem;
+  }
+  .submit {
+    margin-left: 1rem;
+    color: $w;
+    font-weight: bold;
+    border-radius: 0.2rem;
+    background-color: $g;
+    border: none;
+  }
+}
+
+/* LA TODOLIST */
+.todoList {
+  margin: 1.5rem auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column-reverse;
+  li {
+    position: relative;
+    height: 8.7vh;
+    padding: 1rem;
+    border-top: solid $wd 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    time {
+      position: absolute;
+      top: 0.3rem;
+      left: 0.3rem;
+      font-size: 0.7rem;
+      font-weight: 100;
+    }
+    .contents {
+      margin: 0.5rem 2.2rem 0 0;
+      font-size: 1.2rem;
+      font-weight: 100;
+      text-overflow: clip;
+      white-space: nowrap;
+      padding-bottom: 0.3rem;
+      overflow: auto;
+      user-select: text;
+    }
+
+    /* LES BOUTON UPDATE & DELETE */
+    .contentButtons {
+      display: flex;
+      gap: 1rem;
+      button {
+        width: 2.5rem;
+        height: 5.7vh;
+        border-radius: 0.3rem;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:first-child {
+          background-color: $y;
+        }
+        &:last-child {
+          background-color: $r;
+        }
+        i {
+          font-size: 1rem;
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+            saturate(18%) hue-rotate(252deg) brightness(104%) contrast(104%);
+        }
+      }
+    }
+  }
+}
+.change {
+  padding-left: 8rem;
+  display: none;
+}
+
+.title {
+  margin: 2.5rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
