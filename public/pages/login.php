@@ -46,7 +46,7 @@
             if (password_verify($_POST["password"], $donnee["MDP_UTILISATEUR"])) {
                 $_SESSION["id"] = $donnee["ID_UTILISATEUR"];
                 $_SESSION["user_name"] = $_POST["user_name"];
-                header("Location: http://localhost/TodoList_2023/public/pages/todolist.php");
+                header("Location: todolist.php");
             } else {
                 echo "<p class='error'>Nom d'utilisateur incorect!</p>";
             }

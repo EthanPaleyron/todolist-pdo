@@ -53,7 +53,7 @@
                 $statement->closeCursor();
                 $_SESSION["id"] = $id;
                 $_SESSION["user_name"] = $_POST["user_name"];
-                header("Location: http://localhost/TodoList_2023/public/pages/todolist.php");
+                header("Location: todolist.php");
             } else if (preg_match("/[ \[\]\(\)#~`\\£\$€µ<>%§]/", $_POST["user_name"]) || strlen($_POST["user_name"]) < 1) {
                 echo "<p class='error'>Votre nom d'utilisateur ne doit pas contenir des caractere speciaux</p>";
             } else if (strlen($_POST["password"]) <= 8) {

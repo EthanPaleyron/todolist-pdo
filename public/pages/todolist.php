@@ -26,7 +26,7 @@
               if (isset($_SESSION["id"]) && isset($_SESSION["user_name"])) {
                 echo (htmlspecialchars($_SESSION["user_name"]));
               } else {
-                header("Location: http://localhost/TodoList_2023/public/pages/index.php");
+                header("Location: index.php");
               }
               ?>
             </span></p>
@@ -50,7 +50,7 @@
       $statement = $base->prepare($sql);
       $statement->execute(array("contenu" => htmlspecialchars($_POST["contenu"]), "id" => $_SESSION["id"], "date" => date("Y-m-d H:i:s")));
       $statement->closeCursor();
-      header("Location: http://localhost/TodoList_2023/public/pages/todolist.php");
+      header("Location: todolist.php");
     } catch (Exception $e) {
       throw new InvalidArgumentException($e->getMessage());
     }
@@ -92,7 +92,7 @@
         $statement = $base->prepare($sql);
         $statement->execute(array("id_todo_delete" => $_POST["id_todo_delete"]));
         $statement->closeCursor();
-        header("Location: http://localhost/TodoList_2023/public/pages/todolist.php");
+        header("Location: todolist.php");
       } catch (Exception $e) {
         throw new InvalidArgumentException($e->getMessage());
       }
@@ -106,7 +106,7 @@
         $statement = $base->prepare($sql);
         $statement->execute(array("changeContents" => htmlspecialchars($_POST["changeContents"]), "id_todo_change" => $_POST["id_todo_change"], "date" => date("Y-m-d H:i:s")));
         $statement->closeCursor();
-        header("Location: http://localhost/TodoList_2023/public/pages/todolist.php");
+        header("Location: todolist.php");
       } catch (Exception $e) {
         throw new InvalidArgumentException($e->getMessage());
       }
